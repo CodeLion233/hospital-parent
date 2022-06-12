@@ -16,3 +16,6 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+# mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:com/example/hospital/mapper/xml/*.xml

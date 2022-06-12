@@ -20,6 +20,11 @@
     <dependencies>
         <dependency>
             <groupId>com.example.hospital</groupId>
+            <artifactId>model</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.example.hospital</groupId>
             <artifactId>service-util</artifactId>
             <version>1.0</version>
         </dependency>

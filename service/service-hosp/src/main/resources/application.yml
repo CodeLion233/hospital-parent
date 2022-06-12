@@ -44,9 +44,9 @@ spring:
 #    password: guest
 #
 #
-## mybatis-plus
-#mybatis-plus:
-#  mapper-locations: classpath:com/example/hospital/mapper/xml/*.xml
+# mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:com/example/hospital/mapper/xml/*.xml
 #
 ## sentinel
 #feign:
