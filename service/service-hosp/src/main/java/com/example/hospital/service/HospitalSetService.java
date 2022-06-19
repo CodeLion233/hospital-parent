@@ -1,6 +1,6 @@
 package com.example.hospital.service;
 
-import com.example.hospital.hosp.HospitalSet;
+import com.example.hospital.entity.hosp.HospitalSet;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

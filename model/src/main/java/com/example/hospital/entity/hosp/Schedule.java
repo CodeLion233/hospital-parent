@@ -1,4 +1,4 @@
-package com.example.hospital.hosp;
+package com.example.hospital.entity.hosp;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -18,7 +18,7 @@ import java.util.Date;
  * Schedule
  * </p>
  *
- * @author qy
+ * @author huangjiahao
  */
 @Data
 @ApiModel(description = "Schedule")

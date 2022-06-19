@@ -47,16 +47,16 @@ public class Result<T> {
         return Result.success(null);
     }
 
-    public static<T> Result<T> success(T data){
+    public static <T> Result<T> success(T data){
         Result<T> result = setResult(data);
         return setResult(data, ResultCodeEnum.SUCCESS);
     }
 
-    public static<T> Result<T> error(){
+    public static <T> Result<T> error(){
         return Result.error(null);
     }
 
-    public static<T> Result<T> error(T data){
+    public static <T> Result<T> error(T data){
         Result<T> result = setResult(data);
         return setResult(data, ResultCodeEnum.FAIL);
     }

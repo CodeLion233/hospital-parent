@@ -1,8 +1,6 @@
-package com.example.hospital.hosp;
+package com.example.hospital.entity.hosp;
 
 import com.alibaba.fastjson.JSONObject;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.example.hospital.base.BaseMongoEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -15,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Hospital
  * </p>
  *
- * @author qy
+ * @author huangjiahao
  */
 @Data
 @ApiModel(description = "Hospital")

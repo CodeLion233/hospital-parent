@@ -1,4 +1,4 @@
-package com.example.hospital.hosp;
+package com.example.hospital.entity.hosp;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -18,7 +18,7 @@ import java.util.List;
  * RegisterRule
  * </p>
  *
- * @author qy
+ * @author huangjiahao
  */
 @Data
 @ApiModel(description = "预约规则")

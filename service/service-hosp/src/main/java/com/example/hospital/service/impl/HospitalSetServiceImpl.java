@@ -1,6 +1,6 @@
 package com.example.hospital.service.impl;
 
-import com.example.hospital.hosp.HospitalSet;
+import com.example.hospital.entity.hosp.HospitalSet;
 import com.example.hospital.mapper.HospitalSetMapper;
 import com.example.hospital.service.HospitalSetService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

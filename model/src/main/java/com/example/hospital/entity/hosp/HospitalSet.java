@@ -1,4 +1,4 @@
-package com.example.hospital.hosp;
+package com.example.hospital.entity.hosp;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -12,7 +12,7 @@ import lombok.Data;
  * HospitalSet
  * </p>
  *
- * @author qy
+ * @author huangjiahao
  */
 @Data
 @ApiModel(description = "医院设置")
@@ -22,12 +22,12 @@ public class HospitalSet extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
 	@ApiModelProperty(value = "医院名称")
-	@TableField("hosname")
-	private String hosname;
+	@TableField("hosp_name")
+	private String hospName;
 
 	@ApiModelProperty(value = "医院编号")
-	@TableField("hoscode")
-	private String hoscode;
+	@TableField("hosp_code")
+	private String hospCode;
 
 	@ApiModelProperty(value = "api基础路径")
 	@TableField("api_url")
