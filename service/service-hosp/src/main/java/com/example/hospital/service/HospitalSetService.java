@@ -1,7 +1,9 @@
 package com.example.hospital.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.hospital.entity.hosp.HospitalSet;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.hospital.vo.hosp.HospitalSetQueryVO;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface HospitalSetService extends IService<HospitalSet> {
 
+    Page<HospitalSet> findPageHospSet(long current, long limit, HospitalSetQueryVO hospitalSetQueryVO);
 }

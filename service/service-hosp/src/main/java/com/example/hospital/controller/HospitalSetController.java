@@ -6,16 +6,19 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.hospital.common.exception.HospitalException;
 import com.example.hospital.common.result.Result;
 import com.example.hospital.common.result.ResultCodeEnum;
+import com.example.hospital.common.util.MD5;
 import com.example.hospital.entity.hosp.HospitalSet;
 import com.example.hospital.service.HospitalSetService;
 import com.example.hospital.vo.hosp.HospitalSetQueryVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * <p>
@@ -55,19 +58,25 @@ public class HospitalSetController {
     @PostMapping("findPageHospSet/{current}/{limit}")
     public Result findPageHospSet(@PathVariable long current,
                                   @PathVariable long limit,
-                                  @RequestBody HospitalSetQueryVO hospitalSetQueryVO) {
-        Page<HospitalSet> page = new Page<>(current, limit);
-        QueryWrapper<HospitalSet> queryWrapper = new QueryWrapper<>();
-        String hospName = hospitalSetQueryVO.getHospName();
-        String hospCode = hospitalSetQueryVO.getHospCode();
-        if (!StringUtils.isEmpty(hospCode)) {
-            queryWrapper.eq("hosp_code", hospCode);
+                                  HospitalSetQueryVO hospitalSetQueryVO) {
+        Page<HospitalSet> pageHospSet = hospitalSetService.findPageHospSet(current, limit, hospitalSetQueryVO);
+        return Result.success(pageHospSet);
+    }
+
+    @ApiOperation("保存医院设置")
+    @PostMapping("save")
+    public Result save(@RequestBody HospitalSet hospitalSet) {
+        // 医院启用
+        hospitalSet.setStatus(1);
+        // 签名秘钥
+        Random random = new Random();
+        hospitalSet.setSignKey(MD5.encrypt(System.currentTimeMillis() + "" + random.nextInt(1000)));
+        boolean result = hospitalSetService.save(hospitalSet);
+        if (result) {
+            return Result.success();
+        } else {
+            return Result.error();
         }
-        if (!StringUtils.isEmpty(hospName)) {
-            queryWrapper.like("hosp_name", hospName);
-        }
-        Page<HospitalSet> result = hospitalSetService.page(page, queryWrapper);
-        return Result.success(result);
     }
 
 }
