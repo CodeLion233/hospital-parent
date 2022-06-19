@@ -1,4 +1,4 @@
-package com.example.hospital.common.util;
+package com.example.hospital.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -1,24 +1,17 @@
 package com.example.hospital.controller;
 
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.hospital.common.exception.HospitalException;
 import com.example.hospital.common.result.Result;
-import com.example.hospital.common.result.ResultCodeEnum;
-import com.example.hospital.common.util.MD5;
 import com.example.hospital.entity.hosp.HospitalSet;
 import com.example.hospital.service.HospitalSetService;
 import com.example.hospital.vo.hosp.HospitalSetQueryVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Random;
 
 /**
  * <p>

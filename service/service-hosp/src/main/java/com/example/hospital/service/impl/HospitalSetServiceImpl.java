@@ -2,7 +2,7 @@ package com.example.hospital.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.hospital.common.util.MD5;
+import com.example.hospital.util.MD5;
 import com.example.hospital.entity.hosp.HospitalSet;
 import com.example.hospital.mapper.HospitalSetMapper;
 import com.example.hospital.service.HospitalSetService;
