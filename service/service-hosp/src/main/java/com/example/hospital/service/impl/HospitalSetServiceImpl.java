@@ -9,6 +9,7 @@ import com.example.hospital.service.HospitalSetService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.hospital.vo.hosp.HospitalSetQueryVO;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 

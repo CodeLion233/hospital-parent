@@ -38,19 +38,15 @@ public class HospitalSetController {
 
     @ApiOperation("逻辑删除医院设置")
     @DeleteMapping("{id}")
-    public Result removeHospSet(@PathVariable long id) {
+    public Result removeHospSet(@PathVariable Long id) {
         boolean flag = hospitalSetService.removeById(id);
-        if (flag) {
-            return Result.success();
-        } else {
-            return Result.error();
-        }
+        return flag ? Result.success() : Result.error();
     }
 
     @ApiOperation("分页查询")
     @PostMapping("findPageHospSet/{current}/{limit}")
-    public Result findPageHospSet(@PathVariable long current,
-                                  @PathVariable long limit,
+    public Result findPageHospSet(@PathVariable Long current,
+                                  @PathVariable Long limit,
                                   @RequestBody(required = false) HospitalSetQueryVO hospitalSetQueryVO) {
         Page<HospitalSet> pageHospSet = hospitalSetService.findPageHospSet(current, limit, hospitalSetQueryVO);
         return Result.success(pageHospSet);
@@ -59,12 +55,8 @@ public class HospitalSetController {
     @ApiOperation("保存医院设置")
     @PostMapping("save")
     public Result save(@RequestBody HospitalSet hospitalSet) {
-        boolean result = hospitalSetService.saveData(hospitalSet);
-        if (result) {
-            return Result.success();
-        } else {
-            return Result.error();
-        }
+        boolean flag = hospitalSetService.saveData(hospitalSet);
+        return flag ? Result.success() : Result.error();
     }
 
 }
