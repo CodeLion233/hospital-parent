@@ -16,4 +16,6 @@ import com.example.hospital.vo.hosp.HospitalSetQueryVO;
 public interface HospitalSetService extends IService<HospitalSet> {
 
     Page<HospitalSet> findPageHospSet(long current, long limit, HospitalSetQueryVO hospitalSetQueryVO);
+
+    boolean saveData(HospitalSet hospitalSet);
 }

@@ -66,12 +66,7 @@ public class HospitalSetController {
     @ApiOperation("保存医院设置")
     @PostMapping("save")
     public Result save(@RequestBody HospitalSet hospitalSet) {
-        // 医院启用
-        hospitalSet.setStatus(1);
-        // 签名秘钥
-        Random random = new Random();
-        hospitalSet.setSignKey(MD5.encrypt(System.currentTimeMillis() + "" + random.nextInt(1000)));
-        boolean result = hospitalSetService.save(hospitalSet);
+        boolean result = hospitalSetService.saveData(hospitalSet);
         if (result) {
             return Result.success();
         } else {
