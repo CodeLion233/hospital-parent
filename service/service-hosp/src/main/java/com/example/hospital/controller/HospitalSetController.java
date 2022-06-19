@@ -58,7 +58,7 @@ public class HospitalSetController {
     @PostMapping("findPageHospSet/{current}/{limit}")
     public Result findPageHospSet(@PathVariable long current,
                                   @PathVariable long limit,
-                                  HospitalSetQueryVO hospitalSetQueryVO) {
+                                  @RequestBody(required = false) HospitalSetQueryVO hospitalSetQueryVO) {
         Page<HospitalSet> pageHospSet = hospitalSetService.findPageHospSet(current, limit, hospitalSetQueryVO);
         return Result.success(pageHospSet);
     }
